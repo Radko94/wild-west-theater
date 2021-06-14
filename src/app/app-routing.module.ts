@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./library/library.module').then((module) => module.LibraryModule),
   },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./user/user.module').then((module) => module.UserModule),
+  },
 ];
 
 @NgModule({

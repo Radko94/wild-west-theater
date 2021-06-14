@@ -1,0 +1,15 @@
+:host {
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+
+      img {
+        border-radius: 50%;
+        padding: 15px;
+      }
+    }
+  }
+}

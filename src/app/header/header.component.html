@@ -1,1 +1,17 @@
-<p>header works!</p>
+<mat-toolbar>
+  <a [routerLink]="['/']">
+    <img
+      width="35px"
+      height="35px"
+      src="https://picsum.photos/seed/picsum/200/300"
+      alt="logo"
+    />
+  </a>
+  <h1>Wild West Theater</h1>
+  <ng-container *ngIf="!initials; else login">
+    <button mat-button [routerLink]="['/profile/login']">Sign in</button>
+  </ng-container>
+  <ng-template #login>
+    <button mat-button [routerLink]="['/profile']">{{ initials }}</button>
+  </ng-template>
+</mat-toolbar>

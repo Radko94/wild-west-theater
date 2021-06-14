@@ -1,4 +1,6 @@
-<app-header></app-header>
+<header>
+  <app-header [initials]="userInitials$ | async"></app-header>
+</header>
 <main>
   <router-outlet></router-outlet>
 </main>
