@@ -4,16 +4,16 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { IUser } from '../interfaces/interfaces';
 
 export const loginRequest = createAction(
-  '[HEADER] LOGIN_REQUEST',
+  '[USER] LOGIN_REQUEST',
   props<{ payload: { email: string } }>()
 );
 
 export const loginSuccess = createAction(
-  '[HEADER] LOGIN_SUCCESS',
+  '[USER] LOGIN_SUCCESS',
   props<{ payload: { user: IUser } }>()
 );
 
 export const loginError = createAction(
-  '[HEADER] LOGIN_ERROR',
+  '[USER] LOGIN_ERROR',
   props<{ payload: { error: HttpErrorResponse } }>()
 );

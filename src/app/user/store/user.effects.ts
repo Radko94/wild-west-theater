@@ -9,7 +9,7 @@ import { switchMap, map, catchError } from 'rxjs/operators';
 import { UserProxyService } from '../services/user-proxy.service';
 
 import * as actions from './user.actions';
-import { ESnackbarActions, ESnackbarMessages } from '../enums/enums';
+import { ESnackbarActions, ESnackbarMessages } from '@common/enums';
 
 @Injectable()
 export class UserEffects {

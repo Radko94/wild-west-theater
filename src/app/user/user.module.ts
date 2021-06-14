@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/user.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { UserStoreFacadeService } from './store/user-store-facade.service';
 
 @NgModule({
   declarations: [UserComponent, LoginComponent],
@@ -23,9 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     UserRoutingModule,
     HttpClientModule,
     StoreModule.forFeature(userStateFeatureKey, userReducer),
-    EffectsModule.forFeature([UserEffects])
+    EffectsModule.forFeature([UserEffects]),
   ],
   exports: [UserComponent],
-  providers: [UserProxyService],
+  providers: [UserProxyService, UserStoreFacadeService],
 })
 export class UserModule {}

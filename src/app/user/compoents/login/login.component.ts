@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { loginRequest } from '../../store/user.actions';
-import { IUserState } from '../../store/user.state';
+import { UserStoreFacadeService } from '../../store/user-store-facade.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +10,9 @@ import { IUserState } from '../../store/user.state';
 export class LoginComponent implements OnInit {
   public loginGroup: FormGroup;
 
-  constructor(private readonly _store: Store<IUserState>) {}
+  constructor(
+    private readonly _userStoreFacade: UserStoreFacadeService
+  ) {}
 
   ngOnInit(): void {
     this.loginGroup = new FormGroup({
@@ -22,8 +22,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(formGroupValue: { email: string }): void {
     if (this.loginGroup.valid)
-      this._store.dispatch(
-        loginRequest({ payload: { email: formGroupValue.email } })
-      );
+      this._userStoreFacade.actions.login(formGroupValue.email);
   }
 }

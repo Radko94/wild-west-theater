@@ -9,7 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
-import { environment } from '../environments/environment';
+import { environment } from '@environments/environment';
 import { userStateFeatureKey } from './user/store/user.state';
 
 export function localStorageSyncReducer(

@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { IUserState } from './user.state';
+
+import * as actions from './user.actions';
+import * as selectors from './user.selectors';
+
+@Injectable()
+export class UserStoreFacadeService {
+  constructor(private readonly _store: Store<IUserState>) {}
+
+  public get actions() {
+    return {
+      login: (email: string) =>
+        this._store.dispatch(actions.loginRequest({ payload: { email } })),
+    };
+  }
+
+  public get selectors() {
+    return {
+      user$: this._store.select(selectors.selectUser),
+    };
+  }
+}
