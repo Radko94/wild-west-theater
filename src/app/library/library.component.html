@@ -1,3 +1,6 @@
-<ng-container *ngIf="(stagePlays$ | async) as stagePlays">
-
+<ng-container *ngIf="stagePlays$ | async as stagePlays">
+  <app-stage-play
+    *ngFor="let stagePlay of stagePlays"
+    [stagePlay]="stagePlay"
+  ></app-stage-play>
 </ng-container>
