@@ -7,7 +7,7 @@ import { UserProxyService } from './services/user-proxy.service';
 import { StoreModule } from '@ngrx/store';
 import { userStateFeatureKey } from './store/user.state';
 import { userReducer } from './store/user.reducer';
-import { LoginComponent } from './compoents/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/user.effects';
