@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HeaderModule],
+  imports: [BrowserModule, AppRoutingModule, HeaderModule, BrowserAnimationsModule, StoreModule.forRoot({}, {})],
   providers: [],
   bootstrap: [AppComponent],
 })
