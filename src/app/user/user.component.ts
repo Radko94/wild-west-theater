@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserStoreFacadeService } from './store/user-store-facade.service';
-import { selectUser } from './store/user.selectors';
 
 @Component({
   selector: 'app-user',

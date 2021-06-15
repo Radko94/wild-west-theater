@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IStagePlay } from '../../interfaces/interfaces';
 
 @Component({
@@ -7,17 +6,10 @@ import { IStagePlay } from '../../interfaces/interfaces';
   templateUrl: './stage-play.component.html',
   styleUrls: ['./stage-play.component.scss'],
 })
-export class StagePlayComponent implements OnInit {
+export class StagePlayComponent {
   @Input()
   public stagePlay: IStagePlay;
 
   @Output()
   public seeDetails: EventEmitter<string> = new EventEmitter<string>()
-
-  constructor(
-    private readonly _router: Router,
-    private readonly _activatedRoute: ActivatedRoute
-  ) {}
-
-  ngOnInit(): void {}
 }

@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { IStagePlay, IStagePlayDetails } from '../../interfaces/interfaces';
+import { IStagePlayDetails } from '../../interfaces/interfaces';
 import { LibraryStoreFacadeService } from '../../store/library-store-facade.service';
 
 @Component({
