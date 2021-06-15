@@ -1,5 +1,5 @@
 @use '../../../../styles/mixins.scss' as mixins;
-
+@import "src/styles/layout-breackpoints.scss";
 
 :host {
   @include mixins.flex-all-center;
@@ -17,6 +17,14 @@
     mat-card-actions {
       display: flex;
       justify-content: flex-end;
+    }
+
+    @include layout-bp(sm) {
+      width: 70%;
+    }
+
+    @include layout-bp(xs) {
+      width: 70%;
     }
   }
 }

@@ -1,10 +1,38 @@
+@import "src/styles/layout-breackpoints.scss";
+
 :host {
   img {
     max-height: 380px;
+    min-height: 380px;
+
+    @include layout-bp(md) {
+      max-height: 280px;
+      min-height: 280px;
+    }
+
+    @include layout-bp(sm) {
+      max-height: 220px;
+      min-height: 220px;
+    }
+
+    @include layout-bp(xs) {
+      max-height: 150px;
+      min-height: 150px;
+    }
   }
 
   mat-card-content {
     text-align: center;
+
+    h1 {
+      @include layout-bp(sm) {
+        font-size: 20px;
+      }
+
+      @include layout-bp(xs) {
+        font-size: 18px;
+      }
+    }
   }
 
   mat-card-actions {
