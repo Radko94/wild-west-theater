@@ -1,11 +1,11 @@
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { IUser } from '../interfaces/interfaces';
+import { IUser } from '@user/interfaces/interfaces';
 
 export const loginRequest = createAction(
   '[USER] LOGIN_REQUEST',
-  props<{ payload: { email: string } }>()
+  props<{ payload: { email: string, password: string } }>()
 );
 
 export const loginSuccess = createAction(

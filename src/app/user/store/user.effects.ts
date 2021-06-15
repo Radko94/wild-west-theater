@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
 import { switchMap, map, catchError } from 'rxjs/operators';
-import { UserProxyService } from '../services/user-proxy.service';
+import { UserProxyService } from '@user/services/user-proxy.service';
 
 import * as actions from './user.actions';
 import { ESnackbarActions, ESnackbarMessages } from '@common/enums';
@@ -24,7 +24,8 @@ export class UserEffects {
     this._actions$.pipe(
       ofType<ReturnType<typeof actions.loginRequest>>(actions.loginRequest),
       switchMap((action) =>
-        this._userProxy.login(action.payload.email).pipe(
+        this._userProxy.login(action.payload.email, action.payload.password).pipe(
+          map((response: any) => response.args),
           map((user) => actions.loginSuccess({ payload: { user } })),
           catchError((error: HttpErrorResponse) =>
             of(actions.loginError({ payload: { error } }))

@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props } from '@ngrx/store';
-import { IStagePlay, IStagePlayDetails } from '../interfaces/interfaces';
+import { IStagePlay, IStagePlayDetails } from '@library/interfaces/interfaces';
 
 export const syncStagePlays = createAction(
   '[LIBRARY] SYNC_STAGE_PLAYS',

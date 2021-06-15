@@ -21,7 +21,10 @@
     ],
     "paths": {
       "@common/*":["src/app/common/*"],
-      "@environments/*": ["src/environments/*"]
+      "@environments/*": ["src/environments/*"],
+      "@header/*": ["src/app/header/*"],
+      "@library/*": ["src/app/library/*"],
+      "@user/*":["src/app/user/*"]
     }
   },
   "angularCompilerOptions": {

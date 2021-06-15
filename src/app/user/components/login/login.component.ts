@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserStoreFacadeService } from '../../store/user-store-facade.service';
+import { UserStoreFacadeService } from '@user/store/user-store-facade.service';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +17,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginGroup = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
   }
 
-  onSubmit(formGroupValue: { email: string }): void {
+  onSubmit(formGroupValue: { email: string, password: string }): void {
     if (this.loginGroup.valid)
-      this._userStoreFacade.actions.login(formGroupValue.email);
+      this._userStoreFacade.actions.login(formGroupValue.email, formGroupValue.password);
   }
 }

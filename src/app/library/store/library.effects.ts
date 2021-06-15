@@ -47,6 +47,7 @@ export class LibraryEffects {
       ),
       switchMap(() =>
         this._libraryProxy.getStagePlays().pipe(
+          map((response: any) => response.args),
           map((stagePlays) =>
             actions.stagePlaysSuccess({ payload: { stagePlays } })
           ),
@@ -65,6 +66,7 @@ export class LibraryEffects {
       ),
       switchMap((action) =>
         this._libraryProxy.getStagePlay(action.payload.id).pipe(
+          map((response: any) => response.args),
           map((stagePlay) =>
             actions.stagePlaySuccess({ payload: { stagePlay } })
           ),

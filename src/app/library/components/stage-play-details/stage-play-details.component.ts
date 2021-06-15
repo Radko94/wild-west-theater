@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { IStagePlayDetails } from '../../interfaces/interfaces';
-import { LibraryStoreFacadeService } from '../../store/library-store-facade.service';
+import { IStagePlayDetails } from '@library/interfaces/interfaces';
+import { LibraryStoreFacadeService } from '@library/store/library-store-facade.service';
 
 @Component({
   selector: 'app-stage-play-details',
@@ -22,7 +22,7 @@ export class StagePlayDetailsComponent implements OnInit {
 
     this.selectedStagedPlay$ = this._activatedRoute.params
       .pipe(
-        map((params) => this._libraryStoreFacade.actions.getStagePlay('1')),
+        map((params) => this._libraryStoreFacade.actions.getStagePlay(params.id)),
         switchMap(() => this._libraryStoreFacade.selectors.selectedStagePlay$)
       )
   }

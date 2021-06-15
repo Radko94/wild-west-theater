@@ -8,8 +8,8 @@ import {
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { selectUser } from '../store/user.selectors';
-import { IUserState } from '../store/user.state';
+import { selectUser } from '@user/store/user.selectors';
+import { IUserState } from '@user/store/user.state';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

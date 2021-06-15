@@ -5,12 +5,12 @@ const routes: Routes = [
   {
     path: 'stagePlays',
     loadChildren: () =>
-      import('./library/library.module').then((module) => module.LibraryModule),
+      import('@library/library.module').then((module) => module.LibraryModule),
   },
   {
     path: 'profile',
     loadChildren: () =>
-      import('./user/user.module').then((module) => module.UserModule),
+      import('@user/user.module').then((module) => module.UserModule),
   },
   {
     path: '**',

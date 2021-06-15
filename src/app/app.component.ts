@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
-import { IUser } from './user/interfaces/interfaces';
-import { userStateFeatureKey } from './user/store/user.state';
+import { IUser } from '@user/interfaces/interfaces';
+import { selectUser } from '@user/store/user.selectors';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.unsubscribe = new Subject();
 
     this.userInitials$ = this._store
-      .select((state) => state[userStateFeatureKey]?.user)
+      .select(selectUser)
       .pipe(
         filter<IUser>(Boolean),
         map(
