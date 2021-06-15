@@ -7,6 +7,8 @@ import {
 } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { selectUser } from '../store/user.selectors';
 import { IUserState } from '../store/user.state';
 
 @Injectable()
@@ -23,6 +25,8 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return true;
+    return this._store.select(selectUser).pipe(
+      map(user => !!user)
+    );
   }
 }
