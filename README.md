@@ -85,5 +85,10 @@ One Post => `{{url}}/login`
 And you are fine to go... maybe... dunno... 😂
 
 
+## Demo
+![Alt Text](https://media.giphy.com/media/8Mkalijz1cxabdnEZP/giphy.gif)
+![Alt Text](https://media.giphy.com/media/qyYZ8DSVixo6IjR8kb/giphy.gif)
+![Alt Text](https://media.giphy.com/media/0UJvvhHfp0wIjpJusP/giphy.gif)
+
 
 # Thanks for your attention
