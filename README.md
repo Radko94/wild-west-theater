@@ -8,7 +8,7 @@ This is an sample project made with Angular and Postman Echo Server.
 - Postman
 - Postman setup (echo server setup)
 
-# Postman setup (echo server setup)
+## Postman setup (echo server setup)
 
 Reference to `https://www.youtube.com/watch?v=AnGUFN3JWy0&t=615s`
 
@@ -18,7 +18,7 @@ Two Get => `{{url}}/stagePlays`, `{{url}}/stagePlays/:id`
 
 One Post => `{{url}}/login`
 
-Add Example (postman functionality) `{{url}}/stagePlays`:
+### Add Example (postman functionality) `{{url}}/stagePlays`:
 
 {
     "args": [
@@ -35,7 +35,7 @@ Add Example (postman functionality) `{{url}}/stagePlays`:
     }
 }
 
-Add Example (postman functionality) `{{url}}/stagePlays/:id`
+### Add Example (postman functionality) `{{url}}/stagePlays/:id`
 
 {
     "args": {"id": "string", "name": "string", "imageUrl": "sting"},
@@ -50,7 +50,7 @@ Add Example (postman functionality) `{{url}}/stagePlays/:id`
     }
 }
 
-Add Example (postman functionality) `{{url}}/login` 
+### Add Example (postman functionality) `{{url}}/login` 
 
 {
     "args": {"firstName": "string", "lastName": "string", "email": "sting"},
@@ -66,6 +66,7 @@ Add Example (postman functionality) `{{url}}/login`
 }
 
 
+
 ### Run
 
 `git clone "this repo"`
@@ -74,3 +75,7 @@ Add Example (postman functionality) `{{url}}/login`
 
 `npm i && npm run start`
 
+
+And you are fine to go... maybe... dunno...
+
+# Thanks for your attention
