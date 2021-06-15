@@ -28,7 +28,6 @@ export class AppComponent implements OnInit, OnDestroy {
           (user: IUser) =>
             `${user.firstName[0].toUpperCase()}${user.lastName[0].toUpperCase()}`
         ),
-        map(x => {console.log(x); return x}),
         takeUntil(this.unsubscribe)
       );
   }

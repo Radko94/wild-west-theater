@@ -10,9 +10,8 @@ export const userReducer = createReducer(
     errorMessage: undefined,
     user: action.payload.user,
   })),
-  on(actions.loginError, (state, action) => {
-    console.log(state, action)
-
-    return state;
-  }),
+  on(actions.patchUserRequest, (state, action) => ({
+    ...state,
+    user: action.payload.user,
+  }))
 );

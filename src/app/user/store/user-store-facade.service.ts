@@ -4,6 +4,7 @@ import { IUserState } from './user.state';
 
 import * as actions from './user.actions';
 import * as selectors from './user.selectors';
+import { IUser } from '../interfaces/interfaces';
 
 @Injectable()
 export class UserStoreFacadeService {
@@ -13,6 +14,8 @@ export class UserStoreFacadeService {
     return {
       login: (email: string) =>
         this._store.dispatch(actions.loginRequest({ payload: { email } })),
+      patchUser: (user: IUser) =>
+        this._store.dispatch(actions.patchUserRequest({ payload: { user } })),
     };
   }
 

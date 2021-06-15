@@ -34,6 +34,32 @@ export class UserEffects {
     )
   );
 
+  public patchUser = createEffect(() =>
+    this._actions$.pipe(
+      ofType<ReturnType<typeof actions.patchUserRequest>>(
+        actions.patchUserRequest
+      ),
+      map((action) =>
+        actions.patchUserSuccess({ payload: { user: action.payload.user } })
+      ),
+    )
+  );
+
+  public patchSuccess$ = createEffect(
+    () =>
+      this._actions$.pipe(
+        ofType<ReturnType<typeof actions.patchUserSuccess>>(actions.patchUserSuccess),
+        map(() =>
+          this._snackbar.open(
+            ESnackbarMessages.PatchSuccess,
+            ESnackbarActions.Close
+          )
+        ),
+        map(() => this._router.navigate(['/']))
+      ),
+    { dispatch: false }
+  );
+
   public loginSuccess$ = createEffect(
     () =>
       this._actions$.pipe(
