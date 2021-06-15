@@ -1,8 +1,8 @@
+@use '../../styles/mixins.scss' as mixins;
+
 :host {
   height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixins.flex-all-center;
 
   mat-card {
     width: 50%;
