@@ -13,12 +13,15 @@ export class LibraryStoreFacadeService {
     return {
       syncStagePlays: () =>
         this._store.dispatch(actions.syncStagePlays({ payload: {} })),
+      getStagePlay: (id: string) =>
+        this._store.dispatch(actions.stagePlayRequest({ payload: { id } })),
     };
   }
 
   public get selectors() {
     return {
       stagePlays$: this._store.select(selectors.selectStagePlays),
+      selectedStagePlay$: this._store.select(selectors.selectSelectedStagePlays),
     };
   }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ActionReducer, StoreModule } from '@ngrx/store';
+import { Action, ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -21,6 +21,10 @@ export function localStorageSyncReducer(
   })(reducer);
 }
 
+export const metaReducers: Array<MetaReducer<{}, Action>> = [
+  localStorageSyncReducer,
+];
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,7 +32,7 @@ export function localStorageSyncReducer(
     BrowserAnimationsModule,
     AppRoutingModule,
     HeaderModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({}, { metaReducers }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

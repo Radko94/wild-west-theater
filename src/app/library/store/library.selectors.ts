@@ -9,3 +9,8 @@ export const selectStagePlays = createSelector(
   selectLibraryStateFeature,
   (state: ILibraryState) => state.stagePlayCollection
 );
+
+export const selectSelectedStagePlays = createSelector(
+  selectLibraryStateFeature,
+  (state: ILibraryState) => state.selectedStagePlay
+);

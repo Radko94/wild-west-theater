@@ -1,0 +1,10 @@
+<article *ngIf="(selectedStagedPlay$ | async) as selectedStagedPlay">
+  <aside>
+    <img [src]="selectedStagedPlay.imageUrl" alt="some logo">
+  </aside>
+  <main>
+    <h3>Name: {{selectedStagedPlay.name}}</h3>
+    <h3>Actors: <span *ngFor="let actor of selectedStagedPlay.actors">{{actor}}</span></h3>
+    <h3>{{selectedStagedPlay.description}}</h3>
+  </main>
+</article>

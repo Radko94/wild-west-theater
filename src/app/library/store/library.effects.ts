@@ -12,6 +12,7 @@ import { selectStagePlays } from './library.selectors';
 import { ILibraryState } from './library.state';
 
 import * as enums from '@common/enums';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class LibraryEffects {
@@ -19,7 +20,8 @@ export class LibraryEffects {
     private readonly _actions$: Actions,
     private readonly _libraryProxy: LibraryProxyService,
     private readonly _store: Store<ILibraryState>,
-    private readonly _snackbar: MatSnackBar
+    private readonly _snackbar: MatSnackBar,
+    private readonly _router: Router
   ) {}
 
   public syncStagePlays = createEffect(
@@ -56,7 +58,25 @@ export class LibraryEffects {
     )
   );
 
-  public stagePlayFailure = createEffect(
+  public stagePlayByIdRequest = createEffect(() =>
+    this._actions$.pipe(
+      ofType<ReturnType<typeof actions.stagePlayRequest>>(
+        actions.stagePlayRequest
+      ),
+      switchMap((action) =>
+        this._libraryProxy.getStagePlay(action.payload.id).pipe(
+          map((stagePlay) =>
+            actions.stagePlaySuccess({ payload: { stagePlay } })
+          ),
+          catchError((error: HttpErrorResponse) =>
+            of(actions.stagePlayFailure({ payload: { error } }))
+          )
+        )
+      )
+    )
+  );
+
+  public stagePlaysFailure = createEffect(
     () =>
       this._actions$.pipe(
         ofType<ReturnType<typeof actions.stagePlaysFailure>>(
@@ -76,6 +96,33 @@ export class LibraryEffects {
               enums.ESnackbarMessages.ServerError,
               enums.ESnackbarActions.Close
             );
+        })
+      ),
+    { dispatch: false }
+  );
+
+  public stagePlayFailure = createEffect(
+    () =>
+      this._actions$.pipe(
+        ofType<ReturnType<typeof actions.stagePlayFailure>>(
+          actions.stagePlayFailure
+        ),
+        map((action) => {
+          const statusCode: string = action.payload.error.status.toString();
+
+          if (statusCode.startsWith('4'))
+            this._snackbar.open(
+              enums.ESnackbarMessages.ClientError,
+              enums.ESnackbarActions.Close
+            );
+
+          if (statusCode.startsWith('5'))
+            this._snackbar.open(
+              enums.ESnackbarMessages.ServerError,
+              enums.ESnackbarActions.Close
+            );
+
+          this._router.navigate(['/stagePlays']);
         })
       ),
     { dispatch: false }

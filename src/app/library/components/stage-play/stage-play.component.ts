@@ -1,18 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { IStagePlay } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-stage-play',
   templateUrl: './stage-play.component.html',
-  styleUrls: ['./stage-play.component.scss']
+  styleUrls: ['./stage-play.component.scss'],
 })
 export class StagePlayComponent implements OnInit {
   @Input()
   public stagePlay: IStagePlay;
 
-  constructor() { }
+  @Output()
+  public seeDetails: EventEmitter<string> = new EventEmitter<string>()
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private readonly _router: Router,
+    private readonly _activatedRoute: ActivatedRoute
+  ) {}
 
+  ngOnInit(): void {}
 }

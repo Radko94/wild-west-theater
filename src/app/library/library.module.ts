@@ -12,9 +12,10 @@ import { LibraryProxyService } from './services/library-proxy.service';
 import { LibraryStoreFacadeService } from './store/library-store-facade.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StagePlayComponent } from './components/stage-play/stage-play.component';
+import { StagePlayDetailsComponent } from './components/stage-play-details/stage-play-details.component';
 
 @NgModule({
-  declarations: [LibraryComponent, StagePlayComponent],
+  declarations: [LibraryComponent, StagePlayComponent, StagePlayDetailsComponent],
   imports: [
     CommonModule,
     LibraryMaterialModule,

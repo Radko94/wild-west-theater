@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props } from '@ngrx/store';
-import { IStagePlay } from '../interfaces/interfaces';
+import { IStagePlay, IStagePlayDetails } from '../interfaces/interfaces';
 
 export const syncStagePlays = createAction(
   '[LIBRARY] SYNC_STAGE_PLAYS',
@@ -24,5 +24,20 @@ export const stagePlaysSuccess = createAction(
 
 export const stagePlaysFailure = createAction(
   '[LIBRARY] STAGE_PLAYS_FAILURE',
+  props<{ payload: { error: HttpErrorResponse } }>()
+);
+
+export const stagePlayRequest = createAction(
+  '[LIBRARY] STAGE_PLAY_REQUEST',
+  props<{ payload: { id: string } }>()
+);
+
+export const stagePlaySuccess = createAction(
+  '[LIBRARY] STAGE_PLAY_SUCCESS',
+  props<{ payload: { stagePlay: IStagePlayDetails } }>()
+);
+
+export const stagePlayFailure = createAction(
+  '[LIBRARY] STAGE_PLAY_FAILURE',
   props<{ payload: { error: HttpErrorResponse } }>()
 );

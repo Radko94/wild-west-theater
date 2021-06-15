@@ -8,5 +8,9 @@ export const libraryReducer = createReducer(
   on(actions.stagePlaysSuccess, (state, action) => ({
     ...state,
     stagePlayCollection: action.payload.stagePlays,
+  })),
+  on(actions.stagePlaySuccess, (state, action) => ({
+    ...state,
+    selectedStagePlay: action.payload.stagePlay,
   }))
 );

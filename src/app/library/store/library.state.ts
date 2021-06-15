@@ -1,11 +1,13 @@
-import { IStagePlay } from "../interfaces/interfaces";
+import { IStagePlay, IStagePlayDetails } from '../interfaces/interfaces';
 
 export const libraryStateFeatureKey: string = 'libraryStateFeatureKey';
 
 export interface ILibraryState {
   stagePlayCollection?: IStagePlay[];
+  selectedStagePlay?: IStagePlayDetails;
 }
 
 export const libraryInitialState: ILibraryState = {
-  stagePlayCollection: undefined
-}
+  stagePlayCollection: undefined,
+  selectedStagePlay: undefined,
+};
