@@ -3,8 +3,15 @@
   align-items: center;
   justify-content: center;
 
+  height: 80vh;
+
   mat-card {
     width: 50%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
 
     mat-card-actions {
       display: flex;
