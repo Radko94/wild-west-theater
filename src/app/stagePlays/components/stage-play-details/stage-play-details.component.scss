@@ -6,76 +6,86 @@
   height: 80vh;
   padding: 35px;
 
-  mat-card-content {
-    display: flex;
+  mat-card {
+    mat-card-content {
+      display: flex;
 
-    main {
-      @include mixins.flex-horizontal-center;
-      flex-direction: column;
-      padding: 0 30px;
+      main {
+        @include mixins.flex-horizontal-center;
+        flex-direction: column;
+        padding: 0 30px;
 
-      div:not(:last-of-type) {
-        display: flex;
-        align-items: center;
+        div:not(:last-of-type) {
+          display: flex;
+          align-items: center;
 
-        h3 {
-          margin: 0;
-          padding-right: 10px;
-        }
+          h3 {
+            margin: 0;
+            padding-right: 10px;
+          }
 
-        h2 {
-          margin: 0 0 5px;
-        }
+          h2 {
+            margin: 0 0 5px;
+          }
 
-        h2[actors] {
-          &:not(:last-of-type) {
-            &::after {
-              content: ", ";
-              margin-right: 10px;
-              display: inline-block;
+          h2[actors] {
+            &:not(:last-of-type) {
+              &::after {
+                content: ", ";
+                margin-right: 10px;
+                display: inline-block;
+              }
             }
           }
-        }
 
-        @media (min-width: 1280px) and (max-width: 1378px) {
-          display: block;
-        }
+          @media (min-width: 1280px) and (max-width: 1378px) {
+            display: block;
+          }
 
-        @media (max-width: 733px) {
-          display: block;
-        }
+          @media (max-width: 733px) {
+            display: block;
+          }
 
-        @include layout-bp(xs) {
-          display: block;
+          @include layout-bp(xs) {
+            display: block;
+          }
         }
       }
-    }
 
-    @include layout-bp(md) {
-      display: block;
+      @include layout-bp(md) {
+        display: block;
 
-      img {
-        width: 100%;
-        max-height: 300px;
+        img {
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+
+      @include layout-bp(sm) {
+        display: block;
+
+        img {
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+
+      @include layout-bp(xs) {
+        display: block;
+
+        img {
+          width: 100%;
+          max-height: 300px;
+        }
       }
     }
 
     @include layout-bp(sm) {
-      display: block;
-
-      img {
-        width: 100%;
-        max-height: 300px;
-      }
+      padding: 10px;
     }
 
     @include layout-bp(xs) {
-      display: block;
-
-      img {
-        width: 100%;
-        max-height: 300px;
-      }
+      padding: 10px;
     }
   }
 
