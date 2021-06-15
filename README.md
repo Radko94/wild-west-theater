@@ -30,7 +30,7 @@ Add Example (postman functionality) `{{url}}/stagePlays`:
         "host": "postman-echo.com",
         "x-amzn-trace-id": "Root=160a66480-3342356tmm34121",
         "accept": "*/*",
-        "cookie": "dsadasdasdsadada",
+        "cookie": null,
         "user-agent": "PostmanRuntime/7.26.8"
     }
 }
@@ -45,7 +45,7 @@ Add Example (postman functionality) `{{url}}/stagePlays/:id`
         "host": "postman-echo.com",
         "x-amzn-trace-id": "Root=160a66480-3342356tmm34121",
         "accept": "*/*",
-        "cookie": "dsadasdasdsadada",
+        "cookie": null,
         "user-agent": "PostmanRuntime/7.26.8"
     }
 }
@@ -60,7 +60,7 @@ Add Example (postman functionality) `{{url}}/login`
         "host": "postman-echo.com",
         "x-amzn-trace-id": "Root=160a66480-3342356tmm34121",
         "accept": "*/*",
-        "cookie": "dsadasdasdsadada",
+        "cookie": null,
         "user-agent": "PostmanRuntime/7.26.8"
     }
 }
