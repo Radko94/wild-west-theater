@@ -25,6 +25,16 @@
         h2 {
           margin: 0 0 5px;
         }
+
+        h2[actors] {
+          &:not(:last-of-type) {
+            &::after {
+              content: ', ';
+              margin-right: 10px;
+              display: inline-block;
+            }
+          }
+        }
       }
     }
   }
