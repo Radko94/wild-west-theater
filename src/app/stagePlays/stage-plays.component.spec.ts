@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { StagePlaysComponent } from './stage-plays.component';
+import { StagePlayStoreFacadeService } from './store/stage-play-store-facade.service';
 
 describe('LibraryComponent', () => {
   let component: StagePlaysComponent;
@@ -8,9 +11,10 @@ describe('LibraryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StagePlaysComponent ]
-    })
-    .compileComponents();
+      imports: [StoreModule.forRoot({}, {}), RouterTestingModule],
+      declarations: [StagePlaysComponent],
+      providers: [StagePlayStoreFacadeService]
+    }).compileComponents();
   });
 
   beforeEach(() => {
