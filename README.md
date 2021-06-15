@@ -20,6 +20,7 @@ One Post => `{{url}}/login`
 
 ### Add Example (postman functionality) `{{url}}/stagePlays`:
 
+```javascript
 {
     "args": [
         {"id": "string", "name": "string", "imageUrl": "sting"},
@@ -34,9 +35,11 @@ One Post => `{{url}}/login`
         "user-agent": "PostmanRuntime/7.26.8"
     }
 }
+```
 
 ### Add Example (postman functionality) `{{url}}/stagePlays/:id`
 
+```javascript
 {
     "args": {"id": "string", "name": "string", "imageUrl": "sting"},
     "headers": {
@@ -49,9 +52,11 @@ One Post => `{{url}}/login`
         "user-agent": "PostmanRuntime/7.26.8"
     }
 }
+```
 
 ### Add Example (postman functionality) `{{url}}/login` 
 
+```javascript
 {
     "args": {"firstName": "string", "lastName": "string", "email": "sting"},
     "headers": {
@@ -64,7 +69,7 @@ One Post => `{{url}}/login`
         "user-agent": "PostmanRuntime/7.26.8"
     }
 }
-
+```
 
 
 ### Run
