@@ -6,4 +6,4 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   exports: [MatSnackBarModule, MatCardModule, MatButtonModule],
 })
-export class LibraryMaterialModule {}
+export class StagePlayMaterialModule {}

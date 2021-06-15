@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LibraryStoreFacadeService } from './library-store-facade.service';
+import { StagePlayStoreFacadeService } from './stage-play-store-facade.service';
 
 describe('LibraryStoreFacadeService', () => {
-  let service: LibraryStoreFacadeService;
+  let service: StagePlayStoreFacadeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LibraryStoreFacadeService);
+    service = TestBed.inject(StagePlayStoreFacadeService);
   });
 
   it('should be created', () => {

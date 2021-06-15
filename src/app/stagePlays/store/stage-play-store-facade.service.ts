@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ILibraryState } from './library.state';
+import { IStageState } from './stage-play.state';
 
-import * as actions from './library.actions';
-import * as selectors from './library.selectors';
+import * as actions from './stage-play.actions';
+import * as selectors from './stage-play.selectors';
 
 @Injectable()
-export class LibraryStoreFacadeService {
-  constructor(private readonly _store: Store<ILibraryState>) {}
+export class StagePlayStoreFacadeService {
+  constructor(private readonly _store: Store<IStageState>) {}
 
   public get actions() {
     return {

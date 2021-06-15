@@ -5,21 +5,21 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
-import { LibraryProxyService } from '../services/library-proxy.service';
 
-import * as actions from './library.actions';
-import { selectStagePlays } from './library.selectors';
-import { ILibraryState } from './library.state';
+import * as actions from './stage-play.actions';
+import { selectStagePlays } from './stage-play.selectors';
+import { IStageState } from './stage-play.state';
 
 import * as enums from '@common/enums';
 import { Router } from '@angular/router';
+import { StagePlayProxyService } from '@stagePlays/services/stage-play-proxy.service';
 
 @Injectable()
-export class LibraryEffects {
+export class StagePlayEffects {
   constructor(
     private readonly _actions$: Actions,
-    private readonly _libraryProxy: LibraryProxyService,
-    private readonly _store: Store<ILibraryState>,
+    private readonly _stagePlayProxy: StagePlayProxyService,
+    private readonly _store: Store<IStageState>,
     private readonly _snackbar: MatSnackBar,
     private readonly _router: Router
   ) {}
@@ -46,7 +46,7 @@ export class LibraryEffects {
         actions.stagePlaysRequest
       ),
       switchMap(() =>
-        this._libraryProxy.getStagePlays().pipe(
+        this._stagePlayProxy.getStagePlays().pipe(
           map((response: any) => response.args),
           map((stagePlays) =>
             actions.stagePlaysSuccess({ payload: { stagePlays } })
@@ -65,7 +65,7 @@ export class LibraryEffects {
         actions.stagePlayRequest
       ),
       switchMap((action) =>
-        this._libraryProxy.getStagePlay(action.payload.id).pipe(
+        this._stagePlayProxy.getStagePlay(action.payload.id).pipe(
           map((response: any) => response.args),
           map((stagePlay) =>
             actions.stagePlaySuccess({ payload: { stagePlay } })

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StagePlayDetailsComponent } from './components/stage-play-details/stage-play-details.component';
-import { LibraryComponent } from './library.component';
+import { StagePlaysComponent } from './stage-plays.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: LibraryComponent },
+  { path: '', pathMatch: 'full', component: StagePlaysComponent },
   { path: ':id', component: StagePlayDetailsComponent },
 ];
 
@@ -12,4 +12,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class LibraryRoutingModule {}
+export class StagePlayRoutingModule {}

@@ -23,7 +23,7 @@
       "@common/*":["src/app/common/*"],
       "@environments/*": ["src/environments/*"],
       "@header/*": ["src/app/header/*"],
-      "@library/*": ["src/app/library/*"],
+      "@stagePlays/*": ["src/app/stagePlays/*"],
       "@user/*":["src/app/user/*"]
     }
   },

@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'stagePlays',
     loadChildren: () =>
-      import('@library/library.module').then((module) => module.LibraryModule),
+      import('@stagePlays/stage-plays.module').then((module) => module.StagePlaysModule),
   },
   {
     path: 'profile',

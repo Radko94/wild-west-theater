@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IStagePlay } from '@library/interfaces/interfaces';
+import { IStagePlay } from '@stagePlays/interfaces/interfaces';
 
 @Component({
   selector: 'app-stage-play',

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LibraryProxyService } from './library-proxy.service';
+import { StagePlayProxyService } from './stage-play-proxy.service';
 
 describe('LibraryProxyService', () => {
-  let service: LibraryProxyService;
+  let service: StagePlayProxyService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LibraryProxyService);
+    service = TestBed.inject(StagePlayProxyService);
   });
 
   it('should be created', () => {

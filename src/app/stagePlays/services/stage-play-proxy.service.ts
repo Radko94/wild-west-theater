@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '@environments/environment';
-import { IStagePlay, IStagePlayDetails } from '../interfaces/interfaces';
+import { IStagePlay, IStagePlayDetails } from '@stagePlays/interfaces/interfaces';
 
 @Injectable()
-export class LibraryProxyService {
+export class StagePlayProxyService {
   constructor(private readonly _httpClient: HttpClient) {}
 
   getStagePlays(): Observable<IStagePlay[]> {

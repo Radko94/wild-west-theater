@@ -1,10 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { libraryInitialState } from './library.state';
+import { stagePlayInitialState } from './stage-play.state';
 
-import * as actions from './library.actions';
+import * as actions from './stage-play.actions';
 
-export const libraryReducer = createReducer(
-  libraryInitialState,
+export const stagePlayReducer = createReducer(
+  stagePlayInitialState,
   on(actions.stagePlaysSuccess, (state, action) => ({
     ...state,
     stagePlayCollection: action.payload.stagePlays,
