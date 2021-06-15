@@ -1,10 +1,21 @@
-<article *ngIf="(selectedStagedPlay$ | async) as selectedStagedPlay">
-  <aside>
-    <img [src]="selectedStagedPlay.imageUrl" alt="some logo">
-  </aside>
-  <main>
-    <h3>Name: {{selectedStagedPlay.name}}</h3>
-    <h3>Actors: <span *ngFor="let actor of selectedStagedPlay.actors">{{actor}}</span></h3>
-    <h3>{{selectedStagedPlay.description}}</h3>
-  </main>
-</article>
+<mat-card class="mat-elevation-z5" *ngIf="(selectedStagedPlay$ | async) as selectedStagedPlay">
+  <mat-card-content>
+    <aside>
+      <img [src]="selectedStagedPlay.imageUrl" alt="some logo">
+    </aside>
+    <main>
+      <div>
+        <h3>Name: </h3>
+        <h2>{{selectedStagedPlay.name}}</h2>
+      </div>
+      <div>
+        <h3>Actors: </h3>
+        <h2 *ngFor="let actor of selectedStagedPlay.actors">{{actor}}</h2>
+      </div>
+      <div>
+        <h3>Description: </h3>
+        <p>{{selectedStagedPlay.description}}</p>
+      </div>
+    </main>
+  </mat-card-content>
+</mat-card>

@@ -2,10 +2,9 @@
   display: flex;
   align-items: center;
   height: 80vh;
+  padding: 35px;
 
-  article {
-    height: 50vh;
-    padding: 35px;
+  mat-card-content {
     display: flex;
 
     main {
@@ -13,6 +12,21 @@
       flex-direction: column;
       justify-content: center;
       padding: 0 30px;
+
+      div:not(:last-of-type) {
+        display: flex;
+        align-items: center;
+
+        h3 {
+          margin: 0;
+          padding-right: 10px;
+
+        }
+
+        h2 {
+          margin: 0 0 5px;
+        }
+      }
     }
   }
 }
