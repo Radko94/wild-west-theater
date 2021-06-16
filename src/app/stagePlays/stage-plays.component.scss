@@ -1,3 +1,5 @@
+@import "src/styles/layout-breackpoints.scss";
+
 :host {
   display: flex;
   flex-wrap: wrap;
@@ -6,5 +8,10 @@
   app-stage-play {
     flex-basis: 30%;
     margin: 35px 15px;
+
+    @include layout-bp(xs) {
+      flex-basis: 60%;
+      margin: 35px 25px;
+    }
   }
 }

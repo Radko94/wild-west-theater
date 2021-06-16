@@ -3,7 +3,7 @@
 
 :host {
   @include mixins.flex-vertical-center;
-  height: 80vh;
+  min-height: 80vh;
   padding: 35px;
 
   mat-card {
@@ -87,9 +87,5 @@
     @include layout-bp(xs) {
       padding: 10px;
     }
-  }
-
-  @media (max-width: 695px) {
-    height: 100vh;
   }
 }
